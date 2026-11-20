@@ -1,0 +1,12 @@
+# Downloaded source documents
+*.[pP][dD][fF]
+
+# Local Word render checks
+/.triage-brief-qa/
+/.qa-triage-*/
+
+# Office lock files and download metadata
+~$*
+*Zone.Identifier
+Thumbs.db
+.DS_Store
