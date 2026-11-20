@@ -10,7 +10,7 @@ This Copilot Studio workflow takes a staff enquiry and produces a cited policy s
 
 1. **Start** accepts the enquiry as text. **Variable** initialises `summarySection` and `briefSection` as empty strings.
 2. **Classify Enquiry** selects the requested deliverable. **Other** goes directly to **Generate Enquiry Triage Report**, which asks a focused clarification question or explains why the enquiry falls outside scope.
-3. The three policy categories converge at **Gather Policy Evidence**. The agent uses the ACT Government Artificial Intelligence Policy and the Acceptable Use of ICT Resources Policy and returns one shared `researchFindings` field with cited findings and any material gaps.
+3. The three policy categories converge at **Gather Policy Evidence**. This agent reads PDFs stored in SharePoint through its configured knowledge sources, including the *ACT Government Artificial Intelligence Policy* and the *Acceptable Use of ICT Resources Policy*. It passes cited findings and any material gaps to the drafting and verification agents in the shared `researchFindings` field.
 4. **Needs a summary?** runs **Draft Policy Summary → Verify Summary → Set summarySection** for summary-only and combined requests. Both exits lead to **Needs a brief?**
 5. **Needs a brief?** runs **Draft Options Brief → Verify Brief → Set briefSection** for brief-only and combined requests. Both exits lead to **Generate Review Report**.
 6. **Generate Review Report** uses the original enquiry, selected category and the two variables to present only the requested draft sections.
